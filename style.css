@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f6f6f6;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    width: 768px;
+    height: 768px;
+    background-image: url("https://i.pinimg.com/564x/48/95/63/4895630fd863595ba6ef02173019f4ae.jpg");
+    background-size: 100%;
+    background-position: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    border-radius: 15px;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.8s;
+}
+
+.card::before{
+    content: "";
+    position: absolute;
+    border:1px solid #f6f6f6;
+    top:8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    border-radius: 15px ;
+    opacity: 0;
+    transition:opacity 0.3s ;
+}
+
+.card:hover::before{
+    opacity: 1;
+}
+
+.card:hover{
+    background-size: 200%;
+    background-position: left center;
+}
+
+.card span{
+    font-size: 32px;
+    font-family: "Segoe UI";
+    color: #f6f6f6;
+    font-weight: bolder;
+    text-transform: capitalize;
+    text-shadow: 0 5px 5px #111 ;
+    position: absolute;
+    top:15px;
+    left:25px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s;
+}
+
+.card:hover span{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.social-media-list{
+    list-style: none;
+    position: absolute;
+    bottom: 15px;
+    left:25px;
+    opacity: 0;
+    transition:opacity 0.3s ;
+}
+
+.social-media-list li{
+    text-align: center;
+}
+
+.social-media-list li:not(:last-child){
+    margin-bottom: 20px;
+}
+
+.social-media-list i{
+    color: #f6f6f6;
+    font-size: 18px;
+}
+
+.card:hover .social-media-list{
+    opacity: 1;
+}
